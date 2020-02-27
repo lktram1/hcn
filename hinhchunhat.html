@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <canvas id="mycanvas" width="800px" height="800px"></canvas>
+    <script>
+        
+        let HCN = function (dai, rong) {
+            this.dai = dai;
+            this.rong = rong;
+            this.getdai = function () { return dai; }
+            this.getrong = function () { return rong; }
+            this.getchuvi = function () {
+                return ((this.dai + this.rong) * 2);
+            }
+            this.setdai=function(dai){ this.dai=dai}
+            this.setrong=function(rong){ this.rong=rong}
+        
+            this.vehcn= function(){ 
+                var c = document.getElementById("mycanvas");
+                var ctx = c.getContext("2d");
+                 ctx.fillStyle = "#FF0000";
+                ctx.fillRect(0, 0, this.dai, this.rong);
+            }
+            this.getdientich = function () { return dai * rong; }
+
+        }
+        let hcn = new HCN(600, 500);
+        let dai = hcn.getdai();
+        let rong = hcn.getrong();
+        let chuvi = hcn.getchuvi();
+        let dientich = hcn.getdientich();
+        document.write('chu vi:' + chuvi + '; dien tich:' + dientich);
+        hcn.vehcn();
+        
+    </script>
+    <script>
+      
+    </script>
+
+
+</body>
+
+</html>
